@@ -1,9 +1,8 @@
-/* Código Responsável pela atividade 3 usado como base a atividade feita em laboratório com os códigos disponibilizados no cods-lab11 */
+/* Código Responsável pela atividade 1 usado como base a atividade feita em laboratório com os códigos disponibilizados no cods-lab11 */
 
 import java.util.LinkedList;
 
-//-------------------------------------------------------------------------------
-//!!! Documentar essa classe !!!
+
 class FilaTarefas {
     private final int nThreads;
     private final MyPoolThreads[] threads;
@@ -57,9 +56,7 @@ class FilaTarefas {
        } 
     } 
 }
-//-------------------------------------------------------------------------------
 
-//--PASSO 1: cria uma classe que implementa a interface Runnable 
 class Hello implements Runnable {
    String msg;
    public Hello(String m) { msg = m; }
@@ -103,16 +100,16 @@ class Primo implements Runnable {
    }
 }
 
-//Classe da aplicação (método main)
-class MyPool {
-    private static final int NTHREADS = 10;
 
-    public static void main (String[] args) {
-      //--PASSO 2: cria o pool de threads
+class MyPool {
+  private static final int NTHREADS = 10;
+  public static void main (String[] args) {
+      Integer N = 100;// Ate que N quer analisar se é primo ou não
+    //--PASSO 2: cria o pool de threads
       FilaTarefas pool = new FilaTarefas(NTHREADS); 
       
       //--PASSO 3: dispara a execução dos objetos runnable usando o pool de threads
-      for (int i = 0; i < 25; i++) {
+      for (int i = 0; i < N; i++) {
         //final String m = "Hello da tarefa " + i;
         //Runnable hello = new Hello(m);
         //pool.execute(hello);
@@ -120,7 +117,7 @@ class MyPool {
         pool.execute(primo);
       }
 
-      //--PASSO 4: esperar pelo termino das threads
+      
       pool.shutdown();
       System.out.println("Terminou");
    }

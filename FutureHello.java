@@ -10,13 +10,13 @@ import java.util.ArrayList;
 import java.util.List;
 
 
-//classe runnable
+
 class MyCallable implements Callable<Long> {
   //construtor
   MyCallable() {
   }
  
-  //método para execução
+  
   public Long call() throws Exception {
     long s = 0;
     for (long i=1; i<=100; i++) {
@@ -45,14 +45,14 @@ class ehPrimo implements Callable<Boolean>{
 
 }
 
-//classe do método main
+
 public class FutureHello  {
-  private static final int N = 3;
+  //private static final int N = 3;
   private static final int NTHREADS = 1;
 
   public static void main(String[] args) {
     //cria um pool de threads (NTHREADS)
-    Integer N = 1000;
+    Integer N = 1000;// Ate que N quer analisar se é primo ou não
     ExecutorService executor = Executors.newFixedThreadPool(NTHREADS);
     //cria uma lista para armazenar referencias de chamadas assincronas
     List<Future<Long>> list = new ArrayList<Future<Long>>();
