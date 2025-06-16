@@ -1,7 +1,4 @@
-/* Disciplina: Programacao Concorrente */
-/* Prof.: Silvana Rossetto */
-/* Laboratório: 11 */
-/* Codigo: Criando um pool de threads em Java */
+/* Código Responsável pela atividade 3 usado como base a atividade feita em laboratório com os códigos disponibilizados no cods-lab11 */
 
 import java.util.LinkedList;
 
